@@ -32,7 +32,17 @@ and
 
 ;;
 
+module Symbol : sig
+  type t = symbol_t;;
+  val compare: t -> t -> int;;
+  val equal: t -> t -> bool;;
+  val hash: t -> int;;
+end;;
+
+
 val  make_expr : expr_content_t -> expr_t;;
+
+val copy_expr : expr_t -> expr_t;;
 
 val  symbol : string -> symbol_t;;
 
